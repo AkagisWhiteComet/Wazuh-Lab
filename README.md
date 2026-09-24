@@ -10,8 +10,8 @@
 - [Введение](#введение)
 - [1. Установка Linux Ubuntu](#1-установка-linux-ubuntu)
 - [2. Установка Wazuh](#2-установка-wazuh)
-- [3. Accessing the Wazuh Dashboard](#step-3-accessing-the-wazuh-dashboard)
-- [4. Wazuh Agent installation and registering](#step-4-wazuh-agent-installation-and-registering)
+- [3. Доступ к Wazuh Dashboard](#3-доступ-к-wazuh-dashboard)
+- [4. Установка и регистрация Wazuh Agent](#4-установка-и-регистрация-wazuh-agent)
 - [5. File Integrity Monitoring](#step-5-file-integrity-monitoring)
 - [Summary](#summary)
 
@@ -56,30 +56,30 @@
 
 
 
-## Step 3. Accessing the Wazuh Dashboard
-The Wazuh Server was finally installed. I could now access the dashboard by entering the Linux machine's IP address into my browser and logging in using the credentials provided at the end of the installation:
+## 3. Доступ к Wazuh Dashboard
+Wazuh Сервер наконец-то установлен. Теперь можно получить доступ к дашборду, введя IP-адрес машины Linux в свой браузер и войдя в систему, используя учётные данные, предоставленные в конце установки:
 
-![Wazuh Dashboard](/screens/wazuh-loaded.png)
+![Wazuh дашборд](/img/wazuh-loaded.png)
 
 
 
-## Step 4. Wazuh Agent installation and registering
-### Installation
-Next, I installed the Wazuh Agent on the endpoint device from which I wanted to collect information. In my case, that device was my Windows 11 computer. The installation is straightforward: simply download and run the installer, then follow the installation wizard.
+## 4. Установка и регистрация Wazuh Agent
+### Установка
+Затем я установил Wazuh Agent на эндпоинт, с которого надо собирать информацию. В моём случае этим устройством был мой компьютер с Windows 11. Установка проста: нужно просто скачать и запустить установщик, а затем следовать инструкции.
 
-Here's what the installed Wazuh Agent looks like:
+Вот так выглядит установленный Wazuh Agent:
 
-![Wazuh Agent](/screens/wazuh-agent.jpg)
+![Wazuh агент](/img/wazuh-agent.jpg)
 
-### Registering
+### Регистрация
 
-Next, I registered the agent with the Wazuh Server. To do this, I launched the agent management utility on the server, added a new agent, copied its API key, and pasted it into the Wazuh Agent. I also entered the manager's IP address:
+Затем я зарегистрировал агента на сервере Wazuh. Для этого я запустил утилиту управления агентами на сервере, добавил нового агента, скопировал его ключ API и вставил его в Wazuh Agent. Также ввёл IP-адрес менеджера:
 
-![API key](/screens/api-key.png)
+![API ключ](/img/api-key.png)
 
-After restarting the Wazuh Agent, it appeared on the dashboard:
+После перезагрузки Wazuh Agent, эндпоинт появился в дашборде:
 
-![Agent added](/screens/agent-added.png)
+![Agent добавлен](/img/agent-added.png)
 
 
 
