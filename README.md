@@ -12,8 +12,8 @@
 - [2. Установка Wazuh](#2-установка-wazuh)
 - [3. Доступ к Wazuh Dashboard](#3-доступ-к-wazuh-dashboard)
 - [4. Установка и регистрация Wazuh Agent](#4-установка-и-регистрация-wazuh-agent)
-- [5. File Integrity Monitoring](#step-5-file-integrity-monitoring)
-- [Summary](#summary)
+- [5. File Integrity Monitoring](#5-file-integrity-monitoring)
+- [Заключение](#заключение)
 
 
 
@@ -83,27 +83,27 @@ Wazuh Сервер наконец-то установлен. Теперь мож
 
 
 
-## Step 5. File Integrity Monitoring
-### Enabling
-Wazuh supports real-time monitoring of file and folder changes using Syscheck.
+## 5. File Integrity Monitoring
+### Включение
+Wazuh поддерживает мониторинг изменений файлов и папок в реальном времени, используя Syscheck.
 
-To enable it, I edited the file located at the following path: `C:\Program Files (x86)\ossec-agent\ossec.conf`.
+Для включения этой функции, я отредактировал файл, расположенный по следующему пути: `C:\Program Files (x86)\ossec-agent\ossec.conf`.
 
-Specifically, I inserted the line `<directories realtime="yes">C:\Users\abc\Test</directories>` between the opening and closing **Directory** tags (replacing the example path with the directory I wanted to monitor):
+В частности, я вставил строку `<directories realtime="yes">C:\Users\abc\Test</directories>` между открывающим и закрывающим тегами **Directory** (заменив пример пути на каталог, изменения которого я хотел отслеживать):
 
-![File Integrity Monitoring](/screens/file-integrity-monitoring.png)
+![File Integrity Monitoring](/img/file-integrity-monitoring.png)
 
-### Example of how it works
-If everything is configured correctly, all file changes are logged in the **Integrity Monitoring** section of the dashboard:
+### Пример работы
+Если всё настроено правильно, то все изменения файлов или папок будут регистрироваться в **Integrity Monitoring** секции дашборда:
 
-![FIM example](/screens/fim-example1.png)
+![Демонстрация FIM](/img/fim-example1.png)
 
-![FIM example](/screens/fim-example2.png)
+![Демонстрация FIM](/img/fim-example2.png)
 
-![FIM example](/screens/fim-file-deleted.png)
+![Демонстрация FIM](/img/fim-file-deleted.png)
 
 
 
-## Summary
+## Заключение
 
-In this lab I successfully deployed a basic Wazuh environment using Ubuntu Server and a Windows 11 endpoint. I installed and configured the Wazuh Server, connected a Windows agent, and verified communication between both systems. Finally, I enabled File Integrity Monitoring (FIM) and confirmed that file system changes were successfully detected and displayed in the Wazuh Dashboard. This project demonstrates the fundamental deployment and configuration steps required to build a simple SIEM environment for SOC learning and security monitoring.
+В этой лаборатории я успешно развернул базовую среду Wazuh с использованием Ubuntu Server и эндпоинта Windows 11. Я установил и настроил Wazuh Server, подключил агента Windows и проверил связь между обеими системами. Наконец, я включил мониторинг целостности файлов (FIM) и подтвердил, что изменения файловой системы были успешно обнаружены и отображены на панели инструментов Wazuh. Этот проект демонстрирует основные шаги развёртывания и конфигурации, необходимые для создания простой среды SIEM для обучения SOC и мониторинга безопасности.
